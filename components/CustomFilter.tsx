@@ -40,9 +40,21 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
                 <ListboxOption
                   value={option}
                   key={option.title}
-                  className="relative cursor-default select-none py-2 px-4"
+                  className={({ active }) =>
+                    `relative cursor-default select-none py-2 px-4 ${
+                      active ? "bg-primary-blue text-white" : "text-gray-900"
+                    }`
+                  }
                 >
-                  {({ selected }) => <span>{option.title}</span>}
+                  {({ selected }) => (
+                    <span
+                      className={`block truncate ${
+                        selected ? "font-medium" : "font-normal"
+                      }`}
+                    >
+                      {option.title}
+                    </span>
+                  )}
                 </ListboxOption>
               ))}
             </ListboxOptions>
