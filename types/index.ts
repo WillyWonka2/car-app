@@ -17,7 +17,7 @@ export interface OptionsProps {
 
 export interface CustomFilterProps {
   title: string;
-  options: OptionsProps[]
+  options: OptionsProps[];
 }
 
 export interface SearchManufacturerProps {
@@ -46,4 +46,9 @@ export interface FilterProps {
   fuel: string;
   limit: number;
   model: string;
+}
+
+export interface ShowMoreProps {
+  pageNumber: number;
+  isNext: boolean;
 }
