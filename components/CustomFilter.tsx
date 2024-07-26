@@ -13,7 +13,7 @@ import {
 } from "@headlessui/react";
 import { updateSearchParams } from "@/utils";
 
-const CustomFilter = ({ title, options }: CustomFilterProps) => {
+const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
   const router = useRouter();
 
   const [selected, setSelected] = useState(options[0]);

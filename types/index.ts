@@ -18,11 +18,12 @@ export interface OptionsProps {
 export interface CustomFilterProps {
   title: string;
   options: OptionsProps[];
+  setFilter: Dispatch<SetStateAction<string>> |  Dispatch<SetStateAction<number>>;
 }
 
 export interface SearchManufacturerProps {
-  manufacturer: string;
-  setManufacturer: (manufacture: string) => void;
+  searchManufacturer: string;
+  setSearchManufacturer: Dispatch<SetStateAction<string>>;
 }
 
 export interface CarProps {
@@ -51,4 +52,5 @@ export interface FilterProps {
 export interface ShowMoreProps {
   pageNumber: number;
   isNext: boolean;
+  setLimit:  Dispatch<SetStateAction<number>>
 }
