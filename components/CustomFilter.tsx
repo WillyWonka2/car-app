@@ -3,7 +3,6 @@
 import { CustomFilterProps } from "@/types";
 import Image from "next/image";
 import { Fragment, useState } from "react";
-import { useRouter } from "next/navigation";
 import {
   Listbox,
   ListboxButton,
@@ -11,17 +10,15 @@ import {
   ListboxOptions,
   Transition,
 } from "@headlessui/react";
-import { updateSearchParams } from "@/utils";
+
 
 const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
-  const router = useRouter();
 
   const [selected, setSelected] = useState(options[0]);
 
   const handleUpdateParams = (e: { title: string; value: string }) => {
-    const newPathName = updateSearchParams(title, e.value.toLowerCase());
-
-    router.push(newPathName);
+    setSelected(e);
+    setFilter(e.value);
   };
 
   return (

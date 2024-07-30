@@ -18,7 +18,7 @@ export interface OptionsProps {
 export interface CustomFilterProps {
   title: string;
   options: OptionsProps[];
-  setFilter: Dispatch<SetStateAction<string>> |  Dispatch<SetStateAction<number>>;
+  setFilter: Dispatch<SetStateAction<string>>;
 }
 
 export interface SearchManufacturerProps {
@@ -38,12 +38,12 @@ export interface CarProps {
   make: string;
   model: string;
   transmission: string;
-  year: number;
+  year: string;
 }
 
 export interface FilterProps {
   manufacturer: string;
-  year: number;
+  year: string;
   fuel: string;
   limit: number;
   model: string;
